@@ -1,16 +1,15 @@
+import os
+from dotenv import load_dotenv
 
-# Access ID/Client ID: t9hjjmqvsr4cjp5gcr9j
-# Access Secret/Client Secret: 0b7d245dcd02411cb7b65ead2b1bf3fb
-# Project Code: p1758460351634u7qss4 - возможно, что не нужен!!!
-# DEVICE_ID = "bf25dcecadaac02ab7eoon"
+load_dotenv()
 
-TOKEN = "8217662495:AAHrPpASnT1FwOeejQjNzJ4GKqlYO8uYde4"  # токен бота
+TOKEN = os.getenv('BOT_TOKEN')  # токен бота
 
-ACCESS_ID = "t9hjjmqvsr4cjp5gcr9j"
-ACCESS_KEY = "0b7d245dcd02411cb7b65ead2b1bf3fb"
-API_ENDPOINT = "https://openapi.tuyaeu.com"  # смотри регион: eu, us, cn
-DEVICE_ID = "bf25dcecadaac02ab7eoon"
-DEVICE_ID_1 = "bf25dcecadaac02ab7eoon"
+ACCESS_ID = os.getenv('ACCESS_ID')
+ACCESS_KEY = os.getenv('ACCESS_KEY')
+API_ENDPOINT = os.getenv('API_ENDPOINT')  # смотри регион: eu, us, cn
+
+DEVICE_ID_1 = os.getenv('DEVICE_ID_1') # id устройства
 
 MAIN_COMMANDS = {
     "get_status": "GET_STATUS",
