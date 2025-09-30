@@ -1,8 +1,5 @@
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-from config import DEVICE_LIST
-
-
 def register_handlers(bot, DEVICE_LIST):
     @bot.message_handler(commands=['start'])
     def send_welcome(message):
