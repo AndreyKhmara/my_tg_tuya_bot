@@ -46,7 +46,7 @@ if __name__ == "__main__":
     render_url = os.getenv("RENDER_EXTERNAL_URL")
 
     if render_url:  # если деплой на Render → вебхук
-        WEBHOOK_URL = f"https://{render_url}/{TOKEN}"
+        WEBHOOK_URL = f"{render_url}/{TOKEN}"
         print("Webhook URL:", WEBHOOK_URL)
         bot.remove_webhook()
         bot.set_webhook(url=WEBHOOK_URL)
