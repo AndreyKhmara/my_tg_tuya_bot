@@ -2,7 +2,7 @@ from telebot import TeleBot
 from tuya_connector import TuyaOpenAPI
 from handlers import (start, devices, controlHandlers)
 from state import user_selected_device
-
+# команда для запуска при локальной разработке - python main.py
 from config import TOKEN, API_ENDPOINT, ACCESS_ID, ACCESS_KEY, DEVICE_LIST
 
 bot = TeleBot(TOKEN)
