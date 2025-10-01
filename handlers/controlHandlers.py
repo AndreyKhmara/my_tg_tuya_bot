@@ -3,10 +3,14 @@ from utils.checkStatus import checkStatus
 from utils.getInfo import get_device_info, get_device_status, post_turn_device
 
 
-def register_handlers(bot, DEVICE_LIST, openapi, user_selected_device):
+def register_handlers(bot, openapi, user_selected_device):
     @bot.message_handler(func=lambda message: message.text in MAIN_COMMANDS.values())
     def device_checking(message):
         command = message.text
+        if not user_selected_device:
+            bot.send_message(message.chat.id, ("Для начала выберите устройство: /start"))
+            return
+
         device_id = user_selected_device[message.chat.id]
         if (command == MAIN_COMMANDS['get_status']):
             try:
