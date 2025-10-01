@@ -25,7 +25,7 @@ app = Flask(__name__)
 # Подключаем handlers
 register_start_handlers(bot, DEVICE_LIST)
 register_devices_handlers(bot, DEVICE_LIST, openapi, user_selected_device)
-register_control_handlers(bot, DEVICE_LIST, openapi, user_selected_device)
+register_control_handlers(bot, openapi, user_selected_device)
 
 
 # Главный webhook endpoint
