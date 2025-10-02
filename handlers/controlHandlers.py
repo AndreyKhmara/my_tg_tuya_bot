@@ -7,7 +7,7 @@ def register_handlers(bot, openapi, user_selected_device):
     @bot.message_handler(func=lambda message: message.text in MAIN_COMMANDS.values())
     def device_checking(message):
         command = message.text
-        if not user_selected_device:
+        if message.chat.id not in user_selected_device:
             bot.send_message(message.chat.id, ("Для начала выберите устройство: /start"))
             return
 
