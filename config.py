@@ -10,6 +10,7 @@ ACCESS_KEY = os.getenv('ACCESS_KEY')
 API_ENDPOINT = os.getenv('API_ENDPOINT')  # смотри регион: eu, us, cn
 
 DEVICE_ID_1 = os.getenv('DEVICE_ID_1') # id устройства
+DEVICE_ID_2 = os.getenv('DEVICE_ID_2')
 
 MAIN_COMMANDS = {
     "get_status": "GET_STATUS",
@@ -19,4 +20,5 @@ MAIN_COMMANDS = {
 
 DEVICE_LIST = {
     "garage_light": DEVICE_ID_1,
+    "main_light": DEVICE_ID_2,
 }
