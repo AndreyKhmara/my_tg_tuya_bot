@@ -16,6 +16,7 @@ MAIN_COMMANDS = {
     "get_status": "GET_STATUS",
     "device_on": "DEVICE_ON",
     "device_off": "DEVICE_OFF",
+    "get_device_list": "GET_DEVICE_LIST",
 }
 
 DEVICE_LIST = {

@@ -1,6 +1,7 @@
-from config import MAIN_COMMANDS
+from config import MAIN_COMMANDS, DEVICE_LIST
 from utils.checkStatus import checkStatus
 from utils.getInfo import get_device_info, get_device_status, post_turn_device
+from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
 def register_handlers(bot, openapi, user_selected_device):
@@ -48,3 +49,14 @@ def register_handlers(bot, openapi, user_selected_device):
                 bot.reply_to(message, f"Статус устройства: {status}")
             except Exception as e:
                 bot.send_message(message.chat.id, (f"Ошибка: {e}"))
+
+        if (command == MAIN_COMMANDS['get_device_list']):
+            markup = InlineKeyboardMarkup()
+            for device_name in DEVICE_LIST.keys():
+                markup.add(InlineKeyboardButton(text=device_name, callback_data=f"{DEVICE_LIST[device_name]}"))
+
+            bot.send_message(
+                message.chat.id,
+                "Выберите устройство:",
+                reply_markup=markup
+            )
